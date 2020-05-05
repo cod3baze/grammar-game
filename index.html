@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;0,500;1,100;1,300;1,500&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/Global.css">
+  <link rel="stylesheet" href="./css/App.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <title>Home | Screen</title>
+</head>
+
+<body>
+  <div id="App">
+    <div class="menu-section">
+      <h1>GRAMMARLY</h1>
+      <span class="clickable">
+        <a href="#" onclick="openCardOfRules()">
+          <img src="./assets/images/info-i.svg" alt="icone de informação">
+        </a>
+      </span>
+    </div>
+    <div class="container">
+      <div id="hello">
+        <img src="./assets/images/game-controllergamer.svg" alt="Imagem do jogo">
+        <div>
+          <button id="button">Começar</button>
+        </div>
+      </div>
+      <div id="copyright">
+        <p>Created By:</p>
+        <p class="py">Elias alexandre</p>
+        <!-- <p class="py">Gabriel C.</p> -->
+      </div>
+    </div>
+
+    <div class="modal-overlay">
+      <span id="diff">
+        <p style="color: white;">Voltar</p>
+        <button onclick="openCardOfRules()" id="arrow-back">
+          <img src="./assets/images/arrow-back-modal.svg" alt="icone para fechar o modal">
+        </button>
+      </span>
+      <div class="modal">
+        <h3>Regras do jogo!</h3>
+        <hr>
+        <p>Acertar o maior número de veses possíveis as palavras e as chaves correspondentes, recomenda-se o menor tempo
+          possível.</p>
+
+        <p>Cada jogada é dividido por set, cada set contém 7 palavras de cada chave podendo verificar com os controles
+          exibidos.</p>
+
+        <p>Cada acerto vale 5 pontos. acertando as duas questões da rodada fica com 10 pontos.</p>
+      </div>
+      <div>
+        <img src="./assets/images/rules.svg" alt="image das regras">
+      </div>
+    </div>
+  </div>
+  <script src="./src/index.js"></script>
+</body>
+
+</html>

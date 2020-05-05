@@ -1,0 +1,76 @@
+div.menu-section span {
+  margin: 9px 0 0 20px;
+}
+
+/* Content */
+
+#App div.container {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+}
+
+div.container div#hello {
+  flex: 3;
+  padding-left: 270px;
+  position: relative;
+}
+
+div.container div#hello img {
+  width: 570px;
+}
+
+div.container div#hello img:hover {
+  transform: translateY(-1px);
+}
+
+div.container div#hello div {
+  position: absolute;
+  right: 30%;
+  bottom: 70px;
+}
+
+#button {
+  width: 200px;
+  height: 40px;
+  font-size: 1.6rem;
+
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#button:hover {
+  opacity: 5;
+  font-size: 1.7rem;
+  font-weight: 400;
+
+  background: linear-gradient(to right, #f25, yellow);
+  color: #fff;
+}
+
+div#copyright {
+  flex: 1
+}
+
+p.py {
+  padding: 5px 0 0 25px;
+  font-weight: 300;
+}
+
+#arrow-back {
+  background: #f25;
+  padding: 5px;
+
+  cursor: pointer;
+  font-family: 'Roboto mono';
+
+  border: 0;
+  border-radius: 4px;
+}
+
+#arrow-back:hover {
+  background: linear-gradient(to right, #f25, yellow);
+  color: #fff;
+}
