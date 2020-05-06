@@ -24,12 +24,24 @@ const getTypeAndReturnWordsToCompare = (tp) => {
   if (type === "G") return Object.values(words[3]);
 };
 
+const handle_acerts = (wrd, words) => {
+  const cert = words.filter((word) => {
+    return word === wrd;
+  });
+
+  console.log(cert.length);
+
+  return cert.length !== 0 ? false : true;
+};
+
 const getWordsEelemnts = () => {
   const [first, second] = wordElements;
 
-  const typeF = first.classList.contains("x");
-  const typeS = second.classList.contains("ch");
-
+  // tipos | palavras
+  let typeF = first.classList.contains("x") ? "x" : null;
+  let typeS = second.classList.contains("ch") ? "ch" : null;
   let x = first.innerHTML;
   let ch = second.innerHTML;
+
+  console.log(handle_acerts("eknwsdc", ["enchada", "engraxate"]));
 };
