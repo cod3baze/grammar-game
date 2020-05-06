@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;0,500;1,100;1,300;1,500&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="../css/Global.css">
-  <link rel="stylesheet" href="../css/App.css">
-  <link rel="stylesheet" href="../css/Content.css">
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/Global.css" />
+  <link rel="stylesheet" href="../css/App.css" />
+  <link rel="stylesheet" href="../css/Content.css" />
+  <link rel="stylesheet" href="../css/modal.css" />
   <title>Document</title>
 </head>
 
@@ -21,20 +22,48 @@
       <h1>GRAMMARLY</h1>
       <span class="clickable">
         <a href="#" onclick="openCardOfRules()">
-          <img src="../assets/images/info-i.svg" alt="icone de informação">
+          <img src="../assets/images/info-i.svg" alt="icone de informação" />
         </a>
       </span>
     </div>
 
     <div id="content">
-      <div>
+      <div class="x-group">
         <div id="words">
           <p id="word">ENGRAXATE</p>
           <p id="word">FECHADURA</p>
         </div>
+        <div class="keys">
+          <span class="key">X</span>
+          <span class="key">CH</span>
+        </div>
+      </div>
+      <div class="asset-group">
+        <img src="../assets/images/game-controllergamer.svg" alt="Imagem Jogo" />
+      </div>
+    </div>
+
+    <div class="modal-overlay">
+      <span id="diff">
+        <p style="color: white;">Fechar</p>
+        <button onclick="openCardOfRules()" id="arrow-back">
+          <img src="../assets/images/arrow-close.svg" alt="icone para fechar o modal">
+        </button>
+      </span>
+      <div class="modal">
+        <h3>Resultado do jogo!</h3>
+        <hr>
+        <p>ID Jogador: <span id="res">2</span></p>
+        <hr>
+
+        <p id="ks">Tempo: <span id="res">2:00</span></p>
+
+        <p id="ks">Certas: <span id="res">3</span></p>
+        <p id="ks">Erradas: <span id="res">2</span></p>
+        <p id="ks">Total de Pontuações: <span id="res">22</span></p>
       </div>
       <div>
-        <img src="../assets/images/game-controllergamer.svg" alt="Imagem Jogo">
+        <img src="../assets/images/trofeu.svg" alt="image das regras">
       </div>
     </div>
   </div>

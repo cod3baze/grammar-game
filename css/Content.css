@@ -1,3 +1,61 @@
 div#content {
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  width: 100%;
+  padding-top: 7%;
+}
+
+.x-group {
+  display: block;
+}
+
+#words {
+  display: flex;
+  flex-direction: row;
+}
+
+#words p#word {
+  padding: 8px;
+  margin: 15px;
+  border-radius: 4px;
+
+  font-family: 'Roboto mono', sans-serif;
+
+  background: #06FF01;
+}
+
+#words p#word:hover {
+  background: rgb(94, 138, 204);
+}
+
+.keys {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.key {
+  background: #FFFFFF;
+  color: #000000;
+
+  padding: 5px;
+
+  cursor: grab;
+  border-radius: 2px;
+}
+
+.key:hover {
+  font-size: large;
+  font-weight: bold;
+}
+
+/* Resultado do Jogo */
+
+span#res {
+  color: greenyellow;
+}
+
+p#ks {
+  padding-left: 20px;
 }
