@@ -8,7 +8,10 @@ div#content {
 }
 
 .x-group {
+
+  margin: 7px 0;
   display: block;
+  position: relative;
 }
 
 #words {
@@ -32,7 +35,7 @@ div#content {
 
 .keys {
   text-align: center;
-  padding: 20px 0;
+  padding: 50px 0;
 }
 
 .key {
@@ -58,4 +61,28 @@ span#res {
 
 p#ks {
   padding-left: 20px;
+}
+
+/* ... */
+
+#slider {
+  position: absolute;
+  right: 5px;
+
+}
+
+#slider button {
+  border: 0;
+  background: #f25;
+
+  width: 60px;
+  height: 20px;
+  cursor: pointer;
+
+  color: #FFF;
+  border-radius: 6px;
+}
+
+#slider button:hover {
+  opacity: .2;
 }
