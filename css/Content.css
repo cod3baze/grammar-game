@@ -25,6 +25,7 @@ div#content {
   border-radius: 4px;
 
   font-family: 'Roboto mono', sans-serif;
+  text-transform: lowercase;
 
   background: #06FF01;
 }
