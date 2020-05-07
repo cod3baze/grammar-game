@@ -13,6 +13,23 @@ const words = [
   },
 ];
 
+const populate = {
+  round: {
+    acerts: {
+      x: 0,
+      ch: 0,
+      j: 0,
+      g: 0,
+    },
+    errors: {
+      x: 0,
+      ch: 0,
+      j: 0,
+      g: 0,
+    },
+  },
+};
+
 const wordElements = document.querySelectorAll("#word");
 
 // retorna os dois elementos atualizados
@@ -70,4 +87,29 @@ const start = () => {
   console.log(ch.element, ch.type);
   console.log("----- resultX : resultCH -----------");
   console.log(resultX, resultCH);
+
+  switch (resultX) {
+    case true:
+      populate.round.acerts.x += 1;
+      break;
+    case false:
+      populate.round.acerts.x -= 1;
+    default:
+      break;
+  }
+
+  switch (resultCH) {
+    case true:
+      populate.round.acerts.ch += 1;
+      break;
+    case false:
+      populate.round.acerts.ch -= 1;
+    default:
+      break;
+  }
+
+  console.log("------- RESULTS --------");
+  console.log("------- X : CH --------");
+  console.log(populate.round.acerts.x);
+  console.log(populate.round.acerts.ch);
 };
