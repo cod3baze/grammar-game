@@ -2,14 +2,28 @@ const words = [
   {
     type: "x",
     0: "engraxate",
-    1: "enxate",
+    1: "ameixa",
     2: "enxergar",
+    3: "baixo",
+    4: "enxerido",
+    5: "enxaqueca",
+    6: "faixa",
+    7: "xenofobia",
+    8: "roxo",
+    9: "paradoxo",
   },
   {
     type: "ch",
     0: "fechadura",
     1: "cochilar",
     2: "chiar",
+    3: "inchado",
+    4: "recauchutar",
+    5: "machismo",
+    6: "fechamento",
+    7: "acolchoado",
+    8: "escrachado",
+    9: "mochila",
   },
 ];
 
@@ -30,12 +44,30 @@ const populate = {
   },
 };
 
-const wordElements = document.querySelectorAll("#word");
+// variáveis globais
+var createElementX = window.createElement;
+const listElements = document.querySelector("div#words");
+var switcherX = window.switcher;
 
-// retorna os dois elementos atualizados
-function getElements() {
-  const wordElements = document.querySelectorAll("#word");
+// grava o history do usuario no navegador
+function final(res) {
+  let x = localStorage.getItem("populate");
+  if (!x) localStorage.setItem("populate", JSON.stringify(res));
+
+  return res;
 }
+function setINglobal(name, value) {
+  localStorage.setItem(name, value);
+}
+function getINglobal(name) {
+  if (localStorage.getItem(name)) return localStorage.getItem(name);
+
+  return 0;
+}
+
+// retorna os elementos atualizados
+const getElements = () =>
+  (wordElements = document.querySelectorAll("#words p#word"));
 
 // compara o elemento com a sua determinada lista: (element: [...])
 // true: a resposta está certo. false: errou a resposta
@@ -58,7 +90,7 @@ const getTypeAndReturnWordsToCompare = (tp) => {
 
 // pega os dois elementos: tipos e as palavras que cada elemento tem
 const getWordsEelemnts = () => {
-  const [first, second] = wordElements;
+  const [first, second] = getElements();
 
   // tipos
   let typeF = first.classList.contains("x") ? "x" : null;
@@ -73,7 +105,33 @@ const getWordsEelemnts = () => {
   ];
 };
 
+function createDinamicElements(list) {
+  let vezes = parseInt(getINglobal("vezes"));
+
+  let elementX = createElementX("x", words[0][vezes]);
+  let elementCH = createElementX("ch", words[1][vezes]);
+
+  listElements.appendChild(elementX);
+  listElements.appendChild(elementCH);
+
+  vezes++;
+  console.log(vezes);
+  setINglobal("vezes", vezes);
+
+  // voltar no início das palavras
+  if (vezes >= 10) {
+    setINglobal("vezes", "1");
+  }
+
+  window.switcher();
+}
+
 const start = () => {
+  /**
+   * pegar o valor do elemento e o seu tipo
+   * verificar se acertou as duas frase
+   * gravar no populate
+   */
   const [x, ch] = getWordsEelemnts();
 
   const listX = getTypeAndReturnWordsToCompare(x.type);
@@ -81,12 +139,6 @@ const start = () => {
 
   const resultX = handle_acerts(x.element, listX);
   const resultCH = handle_acerts(ch.element, listCH);
-
-  console.log("-------- elements ad typs ----------");
-  console.log(x.element, x.type);
-  console.log(ch.element, ch.type);
-  console.log("----- resultX : resultCH -----------");
-  console.log(resultX, resultCH);
 
   switch (resultX) {
     case true:
@@ -108,8 +160,11 @@ const start = () => {
       break;
   }
 
-  console.log("------- RESULTS --------");
-  console.log("------- X : CH --------");
-  console.log(populate.round.acerts.x);
-  console.log(populate.round.acerts.ch);
+  /**
+   * criar duas outras frases
+   * apagar as duas anteriores
+   * e mudar para as novas frases criadas
+   */
+
+  createDinamicElements();
 };
