@@ -51,8 +51,7 @@ var switcherX = window.switcher;
 
 // grava o history do usuario no navegador
 function final(res) {
-  let x = localStorage.getItem("populate");
-  if (!x) localStorage.setItem("populate", JSON.stringify(res));
+  window.openCardOfRules();
 
   return res;
 }
@@ -118,9 +117,9 @@ function createDinamicElements(list) {
   console.log(vezes);
   setINglobal("vezes", vezes);
 
-  // voltar no início das palavras
   if (vezes >= 10) {
     setINglobal("vezes", "1");
+    final();
   }
 
   window.switcher();

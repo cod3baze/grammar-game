@@ -7,6 +7,8 @@ function deletePreviousElements() {
   const element = document.querySelectorAll("#words p#word");
   element[0].remove();
   element[1].remove();
+
+  console.log("------- Removed --------");
 }
 window.deletePreviousElements = deletePreviousElements;
 
