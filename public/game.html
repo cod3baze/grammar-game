@@ -30,15 +30,15 @@
     <div id="content">
       <div class="x-group">
         <div id="words">
-          <p id="word" class="x">ENGRAXATE</p>
-          <p id="word" class="ch">FECHADURA</p>
+          <p id="word" class="x">ENGRA<label ondragover="allowDrop(event)">___</label>ATE</p>
+          <p id="word" class="ch">FE<label ondragover="allowDrop(event)">___</label>ADURA</p>
         </div>
         <div id="slider">
           <button onclick="getWordsEelemnts()">Rodar</button>
         </div>
         <div class="keys">
-          <span class="key">X</span>
-          <span class="key">CH</span>
+          <span draggable="true" class="key">X</span>
+          <span draggable="true" class="key">CH</span>
         </div>
       </div>
       <div class="asset-group">
@@ -72,6 +72,7 @@
   </div>
   <script src="../src/index.js"></script>
   <script src="../src/main.js"></script>
+  <script src="../src/dnd.js"></script>
 </body>
 
 </html>
