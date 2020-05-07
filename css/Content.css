@@ -85,5 +85,5 @@ p#ks {
 }
 
 #slider button:hover {
-  opacity: .2;
+  background: rgb(216, 0, 245);
 }

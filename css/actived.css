@@ -1,0 +1,10 @@
+#words p#word.actived {
+  display: block;
+}
+
+p#word,
+p#word.x,
+p#word.ch {
+  display: none;
+  transition: all 1000ms;
+}
