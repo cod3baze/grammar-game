@@ -8,7 +8,7 @@
 ![rules. image](./assets/hub/rules.png)
 
 - Playing
-![play. image](./assets/hub/gamer.png)
+![play. image](./assets/hub/playing.png)
 
 - Final results
-![result of play. image](./assets/hub/gamer.png)
+![result of play. image](./assets/hub/final.png)
