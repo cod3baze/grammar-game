@@ -49,12 +49,35 @@ var createElementX = window.createElement;
 const listElements = document.querySelector("div#words");
 var switcherX = window.switcher;
 
-// grava o history do usuario no navegador
 function final(res) {
   window.openCardOfRules();
 
+  const elemenID = document.querySelector("#resID");
+  const elementTime = document.querySelector("#resTime");
+  const elementCertas = document.querySelector("#resCerts");
+  const elementErradas = document.querySelector("#resErrors");
+  const elementTotal = document.querySelector("#resPoints");
+
+  const {
+    acerts: { x: a, ch: b },
+  } = populate.round;
+
+  const {
+    errors: { x, ch },
+  } = populate.round;
+
+  const totA = parseInt(a) + parseInt(b);
+  const totE = parseInt(x) + parseInt(ch);
+
+  elementID.innerHTML = localStorage.getItem("user") || Math.random() * 10;
+  elementCertas.innerHTML = totA;
+  elementErradas.innerHTML = totE;
+  elementTotal.innerHTML = totA - totE;
+
   return res;
 }
+
+// grava o history do usuario no navegador
 function setINglobal(name, value) {
   localStorage.setItem(name, value);
 }
@@ -144,7 +167,7 @@ const start = () => {
       populate.round.acerts.x += 1;
       break;
     case false:
-      populate.round.acerts.x -= 1;
+      populate.round.errors.x += 1;
     default:
       break;
   }
@@ -154,7 +177,7 @@ const start = () => {
       populate.round.acerts.ch += 1;
       break;
     case false:
-      populate.round.acerts.ch -= 1;
+      populate.round.errors.ch += 1;
     default:
       break;
   }
